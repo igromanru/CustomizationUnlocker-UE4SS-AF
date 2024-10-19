@@ -12,9 +12,8 @@ UnlockPermanently = false
 ------------------------------
 -- Don't change code below --
 ------------------------------
-ModName = "InfiniteLeyakContainment"
+ModName = "CustomizationUnlocker"
 ModVersion = "1.0.0"
-DebugMode = false
 
 local function ModInfoAsPrefix()
     return "["..ModName.." v"..ModVersion.."] "
@@ -28,10 +27,10 @@ RegisterHook("/Game/Blueprints/Meta/Abiotic_GameInstance.Abiotic_GameInstance_C:
     local unlocked = Unlocked:get()
 
     if not unlocked then
+        Unlocked:set(true)
         if UnlockPermanently then
             gameInstance:UnlockCustomization(rowName)
         end
-        Unlocked:set(true)
     end
 end)
 
