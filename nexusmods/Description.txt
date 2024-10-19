@@ -1,0 +1,53 @@
+[font=Verdana][size=4][b]Description[/b][/size][/font]
+Mod allows you to choose any customization for your character.
+If you want to permanently unlock all customizations so that they remain unlocked even without the mod, set [b]UnlockPermanently = true[/b] in the [i]main.lua[/i] and open each customization category at least once (Head, Hair, Top etc.).
+
+[font=Verdana][size=4][b]Requirements[/b][/size][/font]
+[size=3][url=https://www.nexusmods.com/abioticfactor/mods/35]UE4SS for Abiotic Factor[/url][/size]
+
+[font=Verdana][size=4][b]Manual Installation[/b][/size][/font]
+[size=1]As for now Vortex doesn't support the game, so you have to install the mod manually.[/size]
+1. Follow the instruction on the [url=https://www.nexusmods.com/abioticfactor/mods/35]UE4SS for Abiotic Factor[/url] page to download and install latest UE4SS from there.
+2. After use the [b]Manual Download[/b] button in [i]Files[/i] tab of this mod to download the mod as a zip file.
+4. Unzip/extract the content of mod's zip ([b]CustomizationUnlocker[/b] folder) into the directory: [i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\[/i]
+[size=2]Make sure you don't create a new folder while extracting! If you do just move the content to the destination after.[/size]
+[size=2]Whole mod path should be like this: [i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\CustomizationUnlocker\[/i][/size]
+[size=2]Steam example: [i]C:\Program Files (x86)\Steam\steamapps\common\AbioticFactor\Binaries\Win64\ue4ss\Mods\CustomizationUnlocker\[/i][/size]
+5. Verify that you have installed the mod correctly.
+The mod directory should contain a [b]Scripts[/b] folder and an [b]enabled.txt[/b] file.
+[size=2][i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\CustomizationUnlocker\Scripts\[/i]
+[i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\CustomizationUnlocker\enabled.txt[/i][/size]
+
+
+[font=Verdana][size=4][b]Mod Configuration[/b][/size][/font]
+[size=2]All the configurations are happening in the [b]main.lua[/b][/size]
+1. Navigate into mod's directory->Scripts to find the [b]main.lua[/b] file.
+[size=2]It should be under: (game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\CustomizationUnlocker\Scripts\[/size]
+2. Open the [b]main.lua[/b] with Notepad or any other text editor.
+3. Under the [b]Configurations[/b] section in the [i]main.lua[/i] you will find a lua variable [b]UnlockPermanently[/b].
+Change [b]UnlockPermanently[/b] to [b]true[/b], if you want the mod to unlock customizations permanently.
+[code]UnlockPermanently = true
+[/code]
+4. Don't forget to save your changes!
+5. To permanently unlock all customizations, you must open the “Customization” menu in the Main menu and click on each category to load all elements.
+[size=2]Keep in mind: Not all customization can be unlocked permanently, some are bound to very specific conditions, like the "The Company" ID only unlocks, if you add [url=https://store.steampowered.com/app/408900/]Unfortunate Spacemen[/url] to your Steam library[/size]
+
+[font=Verdana][size=4][b]My AF Mods[/b][/size][/font]
+Check out my other Abiotic Factor mods.
+[list]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/28]Cheat Console Commands[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/33]Stack Manager[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/23]Instant Fishing[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/20]Duplicate Items[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/22]Unlimited Power (Gear - Held Item - Batteries)[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/31]Jager Corpse Remover[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/41]Infinite Leyak Containment[/url]
+[/list]
+[b][url=https://github.com/igromanru/CustomizationUnlocker-UE4SS-AF]GitHub Page[/url][/b]
+
+[font=Arial][size=4]Highest form of appreciation[/size][/font]
+[size=2]If you like my work and feel generous, you can support me.[/size]
+[b]BTC:[/b] bc1q3frvfljn7ut09ggep2gxugv4ypqvyexz3ya7ja
+[b]ETH:[/b] 0xEedBbF6eFa84198cc94fE4Bf6FBB5dfa674AF86b
+[b]ADA:[/b] addr1qyx2sd2rgwdzvjhwnc35udx4k6w9lg524pwrf0llr7d2shzrewyq3nqyxfceuhgh5n5ucx3n8ws0n48krrlpw4khtedq4hzv93
+[url=https://ko-fi.com/igromanru][img]https://i.imgur.com/rGcPxK8.png[/img][/url]
