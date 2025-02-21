@@ -18,7 +18,6 @@ The mod directory should contain a [b]Scripts[/b] folder and an [b]enabled.txt[/
 [size=2][i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\CustomizationUnlocker\Scripts\[/i]
 [i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\CustomizationUnlocker\enabled.txt[/i][/size]
 
-
 [font=Verdana][size=4][b]Mod Configuration[/b][/size][/font]
 [size=2]All the configurations are happening in the [b]main.lua[/b][/size]
 1. Navigate into mod's directory->Scripts to find the [b]main.lua[/b] file.
@@ -32,6 +31,16 @@ Change [b]UnlockPermanently[/b] to [b]true[/b], if you want the mod to unlock cu
 5. To permanently unlock all customizations, you must open the “Customization” menu in the Main menu and click on each category to load all elements.
 [size=2]Keep in mind: Not all customization can be unlocked permanently, some are bound to very specific conditions, like the "The Company" ID only unlocks, if you add [url=https://store.steampowered.com/app/408900/]Unfortunate Spacemen[/url] to your Steam library[/size]
 
+[font=Verdana][size=4][b]Bug/Issue Reports[/b][/size][/font]
+If you have followed the installation instructions above and are 100% sure that you have done everything correctly, but you are still having problems with the mod, please provide following information if you wish to report an issue. 
+[list=1]
+[*]Your game version and Platform (Steam/GoG etc.)
+[*]Which mod version are you using
+[*]The content of [b]UE4SS.log[/b] file.
+[/list]The log file is located in the [b]ue4ss[/b] directory.
+Path: [i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss[/i]
+The easiest way to share the content of the log file is to upload it to a site like: [url=https://pastebin.com/]pastebin.com[/url]
+
 [font=Verdana][size=4][b]My AF Mods[/b][/size][/font]
 Check out my other Abiotic Factor mods.
 [list]
@@ -42,12 +51,11 @@ Check out my other Abiotic Factor mods.
 [*][url=https://www.nexusmods.com/abioticfactor/mods/22]Unlimited Power (Gear - Held Item - Batteries)[/url]
 [*][url=https://www.nexusmods.com/abioticfactor/mods/31]Jager Corpse Remover[/url]
 [*][url=https://www.nexusmods.com/abioticfactor/mods/41]Infinite Leyak Containment[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/50]Always Outline[/url]
 [/list]
 [b][url=https://github.com/igromanru/CustomizationUnlocker-UE4SS-AF]GitHub Page[/url][/b]
 
 [font=Arial][size=4]Highest form of appreciation[/size][/font]
 [size=2]If you like my work and feel generous, you can support me.[/size]
-[b]BTC:[/b] bc1q3frvfljn7ut09ggep2gxugv4ypqvyexz3ya7ja
-[b]ETH:[/b] 0xEedBbF6eFa84198cc94fE4Bf6FBB5dfa674AF86b
-[b]ADA:[/b] addr1qyx2sd2rgwdzvjhwnc35udx4k6w9lg524pwrf0llr7d2shzrewyq3nqyxfceuhgh5n5ucx3n8ws0n48krrlpw4khtedq4hzv93
 [url=https://ko-fi.com/igromanru][img]https://i.imgur.com/rGcPxK8.png[/img][/url]
+[url=https://buymeacoffee.com/igromanru][img]https://i.imgur.com/JG0mNZg.png[/img][/url]

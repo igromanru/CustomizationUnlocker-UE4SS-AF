@@ -14,6 +14,7 @@ UnlockPermanently = false
 ------------------------------
 ModName = "CustomizationUnlocker"
 ModVersion = "1.0.2"
+DebugMode = false
 
 local function ModInfoAsPrefix()
     return "["..ModName.." v"..ModVersion.."] "
@@ -32,6 +33,9 @@ ExecuteInGameThread(function()
         if not unlocked then
             Unlocked:set(true)
             if UnlockPermanently then
+                if DebugMode then
+                    print(ModInfoAsPrefix().."UnlockCustomization: "..rowName:ToString().."\n")
+                end
                 gameInstance:UnlockCustomization(rowName)
             end
         end
