@@ -27,8 +27,8 @@ ExecuteInGameThread(function()
     LoadAsset("/Game/Blueprints/Meta/Abiotic_GameInstance.Abiotic_GameInstance_C")
     RegisterHook("/Game/Blueprints/Meta/Abiotic_GameInstance.Abiotic_GameInstance_C:IsCustomizationRowUnlocked", function(Context, RowName, Unlocked)
         local gameInstance = Context:get() ---@type UAbiotic_GameInstance_C
-        local rowName = RowName:get()
-        local unlocked = Unlocked:get()
+        local rowName = RowName:get() ---@type FName
+        local unlocked = Unlocked:get() ---@type boolean
     
         if not unlocked then
             Unlocked:set(true)
