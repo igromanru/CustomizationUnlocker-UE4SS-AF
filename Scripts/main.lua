@@ -22,48 +22,52 @@ end
 
 print(ModInfoAsPrefix() .. "Starting mod initialization\n")
 
-ExecuteWithDelay(10000, function()
-    ExecuteInGameThread(function()
-        print(ModInfoAsPrefix() .. "Initializing hooks\n")
-        LoadAsset("/Game/Blueprints/Meta/Abiotic_GameInstance.Abiotic_GameInstance_C")
-        RegisterHook("/Game/Blueprints/Meta/Abiotic_GameInstance.Abiotic_GameInstance_C:IsCustomizationRowUnlocked",
-            function(Context, RowName, Unlocked)
-                local gameInstance = Context:get() ---@type UAbiotic_GameInstance_C
-                local rowName = RowName:get() ---@type FName
-                local unlocked = Unlocked:get() ---@type boolean
+local UEHelpers = require("UEHelpers")
 
-                if DebugMode then
-                    print(ModInfoAsPrefix() .. "IsCustomizationRowUnlocked RowName: " .. rowName:ToString() .. "\n")
-                    print(ModInfoAsPrefix() .. "IsCustomizationRowUnlocked Unlocked: " .. tostring(unlocked) .. "\n")
-                end
+while not UEHelpers.GetWorld():IsValid() do
+    print(ModInfoAsPrefix() .. "Waiting for the world instance to ensure the game is fully loaded\n")
+end
 
-                if not unlocked then
-                    Unlocked:set(true)
-                    if UnlockPermanently then
-                        if DebugMode then
-                            print(ModInfoAsPrefix() .. "UnlockCustomization: " .. rowName:ToString() .. "\n")
-                        end
-                        gameInstance:UnlockCustomization(rowName)
+ExecuteInGameThread(function()
+    print(ModInfoAsPrefix() .. "Initializing hooks\n")
+    LoadAsset("/Game/Blueprints/Meta/Abiotic_GameInstance.Abiotic_GameInstance_C")
+    RegisterHook("/Game/Blueprints/Meta/Abiotic_GameInstance.Abiotic_GameInstance_C:IsCustomizationRowUnlocked",
+        function(Context, RowName, Unlocked)
+            local gameInstance = Context:get() ---@type UAbiotic_GameInstance_C
+            local rowName = RowName:get() ---@type FName
+            local unlocked = Unlocked:get() ---@type boolean
+
+            if DebugMode then
+                print(ModInfoAsPrefix() .. "IsCustomizationRowUnlocked RowName: " .. rowName:ToString() .. "\n")
+                print(ModInfoAsPrefix() .. "IsCustomizationRowUnlocked Unlocked: " .. tostring(unlocked) .. "\n")
+            end
+
+            if not unlocked then
+                Unlocked:set(true)
+                if UnlockPermanently then
+                    if DebugMode then
+                        print(ModInfoAsPrefix() .. "UnlockCustomization: " .. rowName:ToString() .. "\n")
                     end
+                    gameInstance:UnlockCustomization(rowName)
                 end
-            end)
-        RegisterHook("/Game/Blueprints/Meta/Abiotic_GameInstance.Abiotic_GameInstance_C:CheckCustomizationSpecialConditions",
-            function(Context, Conditions, Unlocked)
-                -- local gameInstance = Context:get() ---@type UAbiotic_GameInstance_C
-                local conditions = Conditions:get() ---@type FString
-                local unlocked = Unlocked:get() ---@type boolean
+            end
+        end)
+    RegisterHook("/Game/Blueprints/Meta/Abiotic_GameInstance.Abiotic_GameInstance_C:CheckCustomizationSpecialConditions",
+        function(Context, Conditions, Unlocked)
+            -- local gameInstance = Context:get() ---@type UAbiotic_GameInstance_C
+            local conditions = Conditions:get() ---@type FString
+            local unlocked = Unlocked:get() ---@type boolean
 
-                if DebugMode then
-                    print(ModInfoAsPrefix() .. "CheckCustomizationSpecialConditions Conditions: " .. conditions:ToString() .. "\n")
-                    print(ModInfoAsPrefix() .. "CheckCustomizationSpecialConditions Unlocked: " .. tostring(unlocked) .. "\n")
-                end
+            if DebugMode then
+                print(ModInfoAsPrefix() .. "CheckCustomizationSpecialConditions Conditions: " .. conditions:ToString() .. "\n")
+                print(ModInfoAsPrefix() .. "CheckCustomizationSpecialConditions Unlocked: " .. tostring(unlocked) .. "\n")
+            end
 
-                if not unlocked then
-                    Unlocked:set(true)
-                end
-            end)
-        print(ModInfoAsPrefix() .. "Hooks initialized\n")
-    end)
+            if not unlocked then
+                Unlocked:set(true)
+            end
+        end)
+    print(ModInfoAsPrefix() .. "Hooks initialized\n")
 end)
 
 print(ModInfoAsPrefix() .. "Mod loaded successfully\n")
